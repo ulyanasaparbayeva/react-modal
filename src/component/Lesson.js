@@ -1,25 +1,32 @@
-import {useState} from "react";
-
-
+import React, { useState } from 'react';
 
 const Lesson = () => {
-const [name, setName] = useState("John")
-function changeName() {
-  if(name == "John") {
-    setName("Mike")
-  } else {
-    setName("John")
-  }
-}
+  const [modalShow, setModalShow] = useState(false);
+
 
 
   return (
-    <div>
-       <p>{name}</p>
-      <button onClick={changeName}>Click</button>
+    <div className="bg">
+      <div className="btn-group ">
+        <button onClick={() => setModalShow(true)} className="btn">Wiew POP-UP</button>
+        {modalShow && (
+          <div className="modal-background">
+            <div className="modal-content">
+              <i onClick={() => setModalShow(false)} className='bx bx-x'></i>
+              <h2>Are you sure want to delete this element?</h2>
+              <div className="btn-group">
+                <button className="btn-yes">
+                  Yes
+                </button>
+                <button className="btn-no">
+                  No
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   )
 }
 export default Lesson
-
-

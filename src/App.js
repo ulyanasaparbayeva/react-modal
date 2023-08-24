@@ -1,14 +1,14 @@
 
 import './App.css';
-import Lessons from './component/Lessons'
+import Api from './component/Api'
 
 
 
 function App() {
   return (
-    <div className="App">
-      <Lessons/>
-    </div>
+      <div className="App">
+      <Api/>
+      </div>
   );
 }
 
